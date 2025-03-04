@@ -142,6 +142,6 @@
 
     @font-face {
 		font-family: MAGNETOB;
-		src: url('../CustomFonts/MAGNETOB.ttf');
+		src: url('./MAGNETOB.ttf');
 	}
 
