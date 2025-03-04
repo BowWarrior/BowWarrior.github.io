@@ -1,0 +1,145 @@
+body{
+    background-color:grey;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-right: 100px;
+    padding-right: 0;
+    caret-color: black;
+}
+
+iframe{
+    position: absolute;
+    right: 8px;
+    
+}
+
+#Calculator{
+    height:98vh;
+    width:49vw;
+    background-color:darkgrey;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#equation{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    margin: auto;
+}
+
+#numerator{
+    width: 10vw;
+    height: 10vw;
+    text-align: center;
+    font-size: 2vw;
+    border-radius: 5px;
+    background: transparent;
+    color:black;
+    margin-bottom: 1vh;
+}
+
+#numerator::-webkit-outer-spin-button,
+#numerator::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+input::placeholder {
+    font-size: 1.5vw;
+    color:#e8e8e8;
+    white-space: normal;
+    transform: translateY(-15px); /*properly aligns the text (for some reason it gets messed up when the numerator's font size changes)*/
+}
+
+#divisionBar{
+    width: 50%;
+    height: 0.5vh;
+    background-color: black;
+    border: none;
+    margin: 1vh 0;
+}
+
+#Num81{
+    font-size: 8vw;
+    margin-top: 1vh;
+}
+
+#submitBtn{
+    font-size: 1.5vw;
+    padding: 1vh 2vw;
+    margin-top: 2vh;
+    transform: translateY(-5vw);
+}
+
+#impossibleNumber, #actualAnswer {
+    font-size: 1.5vw;
+    margin-top: 2vh;
+    text-align: center;
+    outline: solid;
+    outline-offset: 1vw;
+    outline-width: .2vw;
+    
+    
+}
+
+#calculatedNum, #actualDivisionAnswer {
+    width: 45%;
+    height: auto;
+    display: grid;
+    margin: 1vw;
+    font-size: 1.5vw;
+    padding: 1vw;
+}
+
+
+#resultsContainer {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 2vh;
+}
+
+#numberParagraph{
+    
+    position: relative;
+    transform: translateX(5vw);
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    width: 40vw;
+    max-width: 800px;
+}
+
+.box {
+    background-color: #ffffff;
+    border: 2px solid #cccccc;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    font-size: 1.5rem;
+    color: #333333;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.impossibleNumber {
+    background-color: #ffdddd;
+}
+
+.actualAnswer {
+    background-color: #ddddff;
+}
+
+#explaination{
+    transform: translateY(3vh);
+    text-align: center;
+}

@@ -1,0 +1,20 @@
+<!DOCTYPE html>	
+<html>
+	<head>
+		<title>Spinner</title>
+		<link rel="stylesheet" href="Css/Spinner.css" type="text/css">  <!--Links CSS -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>  <!--enables Javascript -->
+		
+		<script src="Javascript/Spinner.js" defer></script>
+	</head>	
+	<body onload="myBox()" class="body">		
+		<div id="mainbox" class="mainbox">
+            <div id="box" class="box"></div>
+            <button class="spin" onclick="mySpin()">SPIN</button> 
+        </div>
+
+		<input id='NumOSec' type="number" placeholder='Amount of Sections'></input>
+		<input id='SubmitSec' type="submit" onclick='getSection()'>
+
+	</body>
+</html>

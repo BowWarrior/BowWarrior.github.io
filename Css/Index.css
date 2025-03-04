@@ -1,0 +1,147 @@
+    html{
+        scroll-behavior: smooth;
+    }
+    
+    body{
+        overflow:hidden;
+        transition: duration 5s;
+        color:#003b54;
+        background-image: linear-gradient(to right, pink , orange);
+        text-align: center;
+        
+    }
+
+    #intro{
+        font-size:3vmin;
+        position:relative;
+        padding-top: 25vw;
+        margin-left:15%;
+        margin-right: 15%;
+    }
+    
+    h1{
+        margin:0px;
+        padding:0px;
+    }
+
+    #AJCoding{
+        top:30vh;
+        font-size:17vmin;
+        position:absolute;
+        margin:0px;
+        padding:0px;
+        color:Brown;
+        font-family:MAGNETOB;
+        top:0px;
+        left: 50%;
+        transform: translate(-50%, 0%);   
+    }
+
+    #Coding{
+        transform: translate(-1vmin, -17vmin); 
+    }
+        
+    .section{
+        position:relative;
+        left:-.5vw;
+        top:500px;
+        background-color: white;
+        width: 99.6vw;
+        height: 99.6vh;
+        border: groove black;
+        padding: 0px;
+        margin: 0px;
+        /*margin-top: 100%; */
+        
+    }
+    
+    .ball{
+        border-radius: 50%;
+        height:4rem;
+        width:4rem;
+        background-color:white;
+        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: 16px;
+        top:50%;
+        left:50%;
+        display: inline-block;
+        position: absolute;
+        color:white;
+        animation:blink 15s infinite;
+        -webkit-animation:blink 15s infinite;
+        transition: transform 2s;
+        animation-timing-function: linear;
+        border:none;
+        cursor: pointer;
+        /*makes it so you can't select the text inside the ball on accident for every browser*/
+        -webkit-user-select: none; /* Safari */
+        -ms-user-select: none; /* IE 10 and IE 11 */
+        user-select: none;
+
+        /*
+        animation-duration: 10s;
+        animation-delay: 10s;
+        */
+    }
+    
+    iframe{
+        text-align:center;
+    }
+            
+    @keyframes blink {
+        0% {
+            background:black;   
+        }
+        20%{
+            background:grey;          
+        }
+        40%{
+            background:#7e97e6;         
+        }
+        60%{
+            background:#273b7a;         
+        }
+        80%{
+            background:#162040;          
+        }
+        100%{
+            background:black;         
+        }            
+    }
+         
+    @-webkit-keyframes blink {
+        0% {
+            background:black;       
+        }
+        20%{
+            background:grey;        
+        }
+        40%{
+            background:#7e97e6;          
+        }
+        60%{
+            background:#273b7a;         
+        }
+        80%{
+            background:#162040;          
+        }
+        100%{
+            background:black;         
+        }         
+    }
+
+/*
+    max-width: 1440px
+*/
+
+    @media (aspect-ratio:1.7777/1){
+        body{
+            color:white;      
+        }
+    }
+
+    @font-face {
+		font-family: MAGNETOB;
+		src: url('../CustomFonts/MAGNETOB.ttf');
+	}
+

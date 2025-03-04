@@ -1,0 +1,340 @@
+<!DOCTYPE html>	
+<html>
+
+	<head>
+		<title>Sudoku</title>
+		<link rel="stylesheet" href="Css/Sudoku.css" type="text/css">  <!--Links CSS -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>  <!--enables Javascript -->
+		<script src="Javascript/WinResetRun.js" defer></script>
+		<script src="Javascript/CatchCustomError.js" defer></script>
+		<script src="Javascript/Checker.js" defer></script>
+		<script src="Javascript/DifficultySwitcher.js" defer></script>
+		<script src="Javascript/Solver.js" defer></script>
+	</head>
+	
+	<body onload="myBox()" class="body">		
+		<form id="Form">
+			<input type="button" class="resetButton" onclick="myReset()" value="Reset">
+			<input type="submit" value="Submit" id="submitbtn" onclick="myCheck()">
+			
+			<button class="easy" id="DifficultySwitcherBTN">Easy</button>
+			<br />
+			<button class="medium" id="DifficultySwitcherBTN">Medium</button>
+			<br />
+			<button class="hard" id="DifficultySwitcherBTN">Hard</button>
+			<br />
+			<button class="impossible" id="DifficultySwitcherBTN">Impossible</button>
+			<br />
+			<button class="solve">Solve</button>
+			<!-- This is where all the code is for the sections/boxes -->
+			
+			
+			
+			<!-- <p>Just as an FYI, this was my first JS project, and that means that it cannot solve all sudoku's yet, BUT it can solve most simple ones.</p> -->
+			
+			
+			
+			
+			
+			<!-- 
+			input attributes list that may be useful:
+			
+			size - to make sure they don't put in a 2 digit number
+			maxlength - to make sure they don't put in a 2 digit number
+			readonly - for boxes that have preselected numbers
+			value="3" - makes predetermined value, useful for making randomized sudoku
+			
+			 oninvalid="setCustomValidity('Please enter Alphabets.')" - custom print in case they get the sudoku wrong
+			 oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" 
+			-->
+			
+			<table class="Grid">
+				<tr class="TTR">
+					<th class="BoxOutline1"> 
+						<input class="box1" type="number" id="box" required min="1" max="9" value="">
+					</th>
+					<th class="BoxOutline2"> 
+						<input class="box2" type="number" id="box" required min="1" max="9" value="">
+					</th>
+					<th class="BoxOutline3" id="Bordered1R"> 
+						<input class="box3" type="number" id="box" required min="1" max="9"  value=""> 
+					</th>
+					
+					<th class="BoxOutline4" id="Bordered2L"> 
+						<input class="box4" type="number" id="box" required min="1" max="9" value="">
+					</th>
+					<th class="BoxOutline5"> 
+						<input class="box5" type="number" id="box" required min="1" max="9"  value=""> 
+					</th>
+					<th class="BoxOutline6" id="Bordered2R"> 
+						<input class="box6" type="number" id="box" required min="1" max="9" value=""> 
+					</th>
+					
+					<th class="BoxOutline7" id="Bordered3L"> 
+						<input class="box7" type="number" id="box" required min="1" max="9" value="">
+					</th>
+					<th class="BoxOutline8">
+						<input class="box8" type="number" id="box" required min="1" max="9" value=""> 
+					</th>
+					<th class="BoxOutline9"> 
+						<input class="box9" type="number" id="box" required min="1" max="9" value="">
+					</th>
+				</tr>
+				<tr class="TTR">
+					<th class="BoxOutline10">
+						<input class="box10" type="number" id="box" required min="1" max="9"  value=""> 
+					</th>
+					<th class="BoxOutline11"> 
+						<input class="box11" type="number" id="box" required min="1" max="9" value=""> 
+					</th>
+					<th class="BoxOutline12" id="Bordered1R"> 
+						<input class="box12" type="number" id="box" required min="1" max="9" value=""> 
+					</th>
+					
+					<th class="BoxOutline13" id="Bordered2L"> 
+						<input class="box13" type="number" id="box" required min="1" max="9"  value=""> 
+					</th>
+					<th class="BoxOutline14">
+						<input class="box14" type="number" id="box" required min="1" max="9"  value="">
+					</th>
+					<th class="BoxOutline15" id="Bordered2R"> 
+						<input class="box15" type="number" id="box" required min="1" max="9"  value="">
+					</th>
+					
+					<th class="BoxOutline16" id="Bordered3L">
+						<input class="box16" type="number" id="box" required min="1" max="9"  value=""> 
+					</th>
+					<th class="BoxOutline17"> 
+						<input class="box17" type="number" id="box" required min="1" max="9" value=""> 
+					</th>
+					<th class="BoxOutline18"> 
+						<input class="box18" type="number" id="box" required min="1" max="9" value=""> 
+					</th>
+				</tr>
+				<tr class="TTR">
+					<th class="BoxOutline19" id="Bordered1D">
+						<input class="box19" type="number" id="box" required min="1" max="9" value=""> 
+					</th>
+					<th class="BoxOutline20" id="Bordered1D"> 
+						<input class="box20" type="number" id="box" required min="1" max="9" value=""> 
+					</th>
+					<th class="BoxOutline21" id="T1Corner"> 
+						<input class="box21" type="number" id="box" required min="1" max="9"  value="">
+					</th>
+					
+					<th class="BoxOutline22" id="T2Corner1">
+						<input class="box22" type="number" id="box" required min="1" max="9" value="">
+					</th>
+					<th class="BoxOutline23" id="Bordered2D">
+						<input class="box23" type="number" id="box" required min="1" max="9"  value=""> 
+					</th>
+					<th class="BoxOutline24" id="T2Corner2"> 
+						<input class="box24" type="number" id="box" required min="1" max="9"  value="">
+					</th>
+					
+					<th class="BoxOutline25" id="T3Corner1">
+						<input class="box25" type="number" id="box" required min="1" max="9" value=""> 
+					</th>
+					<th class="BoxOutline26" id="Bordered3B">
+						<input class="box26" type="number" id="box" required min="1" max="9"  value=""> 
+					</th>
+					<th class="BoxOutline27" id="Bordered3B">
+						<input class="box27" type="number" id="box" required min="1" max="9"  value=""> 
+					</th>
+				</tr>
+				
+				
+				
+				<tr class="TTR">
+					<th class="BoxOutline28" id="Bordered4T"> 
+						<input class="box28" type="number" id="box" required min="1" max="9" value=""> 
+					</th>
+					<th class="BoxOutline29" id="Bordered4T">
+						<input class="box29" type="number" id="box" required min="1" max="9"  value=""> 
+					</th>
+					<th class="BoxOutline30" id="M4Corner1">
+						<input class="box30" type="number" id="box" required min="1" max="9"  value=""> 
+					</th>
+					
+					<th class="BoxOutline31" id="M5Corner1">
+						<input class="box31" type="number" id="box" required min="1" max="9" value=""> 
+					</th>
+					<th class="BoxOutline32" id="Bordered5T"> 
+						<input class="box32" type="number" id="box" required min="1" max="9"  value="">
+					</th>
+					<th class="BoxOutline33" id="M5Corner4">
+						<input class="box33" type="number" id="box" required min="1" max="9" value="">
+					</th>
+					
+					<th class="BoxOutline34" id="M6Corner1">
+						<input class="box34" type="number" id="box" required min="1" max="9"  value=""> 
+					</th>
+					<th class="BoxOutline35" id="Bordered6T">
+						<input class="box35" type="number" id="box" required min="1" max="9"  value=""> 
+					</th>
+					<th class="BoxOutline36" id="Bordered6T"> 
+						<input class="box36" type="number" id="box" required min="1" max="9" value="">
+					</th>
+				</tr>
+				<tr class="TTR">
+					<th class="BoxOutline37"> 
+						<input class="box37" type="number" id="box" required min="1" max="9" value=""> 
+					</th>
+					<th class="BoxOutline38"> 
+						<input class="box38" type="number" id="box" required min="1" max="9"  value=""> 
+					</th>
+					<th class="BoxOutline39" id="Bordered4R">
+						<input class="box39" type="number" id="box" required min="1" max="9" value="">
+					</th>
+					
+					<th class="BoxOutline40" id="Bordered5L"> 
+						<input class="box40" type="number" id="box" required min="1" max="9" value="">
+					</th>
+					<th class="BoxOutline41" id="">
+						<input class="box41" type="number" id="box" required min="1" max="9" value="">
+					</th>
+					<th class="BoxOutline42" id="Bordered5R"> 
+						<input class="box42" type="number" id="box" required min="1" max="9" value=""> 
+					</th>
+					
+					<th class="BoxOutline43" id="Bordered6L">
+						<input class="box43" type="number" id="box" required min="1" max="9" value=""> 
+					</th>
+					<th class="BoxOutline44">
+						<input class="box44" type="number" id="box" required min="1" max="9"  value=""> 
+					</th>
+					<th class="BoxOutline45" id=""> 
+						<input class="box45" type="number" id="box" required min="1" max="9" value=""> 
+					</th>
+				</tr>
+				<tr class="TTR">
+					<th class="BoxOutline46" id="Bordered4B">
+						<input class="box46" type="number" id="box" required min="1" max="9" value=""> 
+					</th>
+					<th class="BoxOutline47" id="Bordered4B">
+						<input class="box47" type="number" id="box" required min="1" max="9"  value="">
+					</th>
+					<th class="BoxOutline48" id="M4Corner2">
+						<input class="box48" type="number" id="box" required min="1" max="9"  value=""> 
+					</th>
+					
+					<th class="BoxOutline49" id="M5Corner2"> 
+						<input class="box49" type="number" id="box" required min="1" max="9" value="">
+					</th>
+					<th class="BoxOutline50" id="Bordered5B">
+						<input class="box50" type="number" id="box" required min="1" max="9"  value=""> 
+					</th>
+					<th class="BoxOutline51" id="M5Corner3">
+						<input class="box51" type="number" id="box" required min="1" max="9" value=""> 
+					</th>
+					
+					<th class="BoxOutline52" id="M6Corner2"> 
+						<input class="box52" type="number" id="box" required min="1" max="9"  value=""> 
+					</th>
+					<th class="BoxOutline53" id="Bordered6B">
+						<input class="box53" type="number" id="box" required min="1" max="9"  value=""> 
+					</th>
+					<th class="BoxOutline54" id="Bordered6B">
+						<input class="box54" type="number" id="box" required min="1" max="9" value=""> 
+					</th>
+				</tr>
+				
+				
+				
+				<tr class="TTR">
+					<th class="BoxOutline55" id="Bordered7T">
+						<input class="box55" type="number" id="box" required min="1" max="9"  value=""> 
+					</th>
+					<th class="BoxOutline56" id="Bordered7T">
+						<input class="box56" type="number" id="box" required min="1" max="9"  value="">
+					</th>
+					<th class="BoxOutline57" id="B7Corner1">
+						<input class="box57" type="number" id="box" required min="1" max="9" value=""> 
+					</th>
+					
+					<th class="BoxOutline58" id="B8Corner1"> 
+						<input class="box58" type="number" id="box" required min="1" max="9"  value=""> 
+					</th>
+					<th class="BoxOutline59" id="Bordered8T">
+						<input class="box59" type="number" id="box" required min="1" max="9"  value=""> 
+					</th>
+					<th class="BoxOutline60" id="B8Corner2">
+						<input class="box60" type="number" id="box" required min="1" max="9" value="">
+					</th>
+					
+					<th class="BoxOutline61" id="B9Corner1"> 
+						<input class="box61" type="number" id="box" required min="1" max="9"  value=""> 
+					</th>
+					<th class="BoxOutline62" id="Bordered9T"> 
+						<input class="box62" type="number" id="box" required min="1" max="9" value=""> 
+					</th>
+					<th class="BoxOutline63" id="Bordered9T"> 
+						<input class="box63" type="number" id="box" required min="1" max="9" value=""> 
+					</th>
+				</tr>
+				<tr class="TTR">
+					<th class="BoxOutline64">
+						<input class="box64" type="number" id="box" required min="1" max="9" value="">
+					</th>
+					<th class="BoxOutline65"> 
+						<input class="box65" type="number" id="box" required min="1" max="9" value=""> 
+					</th>
+					<th class="BoxOutline66" id="Bordered7R"> 
+						<input class="box66" type="number" id="box" required min="1" max="9"  value=""> 
+					</th>
+					
+					<th class="BoxOutline67" id="Bordered8L">
+						<input class="box67" type="number" id="box" required min="1" max="9"  value="">
+					</th>
+					<th class="BoxOutline68">
+						<input class="box68" type="number" id="box" required min="1" max="9"  value=""> 
+					</th>
+					<th class="BoxOutline69" id="Bordered8R"> 
+						<input class="box69" type="number" id="box" required min="1" max="9"  value=""> 
+					</th>
+					
+					<th class="BoxOutline70" id="Bordered9L"> 
+						<input class="box70" type="number" id="box" required min="1" max="9" value=""> 
+					</th>
+					<th class="BoxOutline71"> 
+						<input class="box71" type="number" id="box" required min="1" max="9" value=""> 
+					</th>
+					<th class="BoxOutline72"> 
+						<input class="box72" type="number" id="box" required min="1" max="9"  value=""> 
+					</th>
+				</tr >
+				<tr class="TTR">
+					<th class="BoxOutline73"> 
+						<input class="box73" type="number" id="box" required min="1" max="9" value="">
+					</th>
+					<th class="BoxOutline74"> 
+						<input class="box74" type="number" id="box" required min="1" max="9" value="">
+					</th>
+					<th class="BoxOutline75" id="Bordered7R"> 
+						<input class="box75" type="number" id="box" required min="1" max="9" value="">
+					</th>
+					
+					<th class="BoxOutline76" id="Bordered8L">
+						<input class="box76" type="number" id="box" required min="1" max="9" value=""> 
+					</th>
+					<th class="BoxOutline77">
+						<input class="box77" type="number" id="box" required min="1" max="9"  value="">
+					</th>
+					<th class="BoxOutline78" id="Bordered8R"> 
+						<input class="box78" type="number" id="box" required min="1" max="9" value="">
+					</th>
+					
+					<th class="BoxOutline79" id="Bordered9L">
+						<input class="box79" type="number" id="box" required min="1" max="9"  value=""> 
+					</th>
+					<th class="BoxOutline80"> 
+						<input class="box80" type="number" id="box" required min="1" max="9" value=""> 
+					</th>
+					<th class="BoxOutline81"> 
+						<input class="box81" type="number" id="box" required min="1" max="9" value="">
+					</th>
+				</tr>
+			</table>
+		</form>
+	</body>
+</html>

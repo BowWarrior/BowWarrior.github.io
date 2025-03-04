@@ -1,0 +1,136 @@
+p{
+    position:absolute;
+    top:0%;
+    color:#d5dadd;
+}
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    
+    }
+
+
+
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    outline: none;
+    
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background: #F44336;
+    background-size: cover;
+
+}
+
+.mainbox{
+    position:absolute;
+    width:100vmin;
+    height:100vmin;
+    left: 50%;
+  	transform: translate(-50%, 50%);
+
+}
+.mainbox:after{
+    position:absolute;
+    content:'';
+    width: 32px;
+    height: 32px;
+    background: url('../Images/ArrowHead4.PNG') no-repeat;
+    background-size: 32px;
+    right: -30px;
+    top:47.5%;
+    transform: translateY(-50%);
+    transform: scaleX(-1);
+
+}
+
+.box{
+    width: 100%;
+    height:100%;
+    position:relative;
+    border-radius:50%;   
+    background: '';
+    
+    /*
+    background-image: conic-gradient(red 0deg, red 90deg, yellow 90deg, yellow 180deg, green 180deg, green 270deg, blue 270deg);
+    background-image: conic-gradient(red 0deg, red 120deg, green 120deg, green 240deg, blue 240deg);
+    */
+    
+    
+    border:.625rem solid #fff;
+    overflow: hidden;
+    
+    transition: all ease 5s;
+    
+    
+}
+
+
+.spin{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    width:75px;
+    height:75px;
+    border-radius:50%;
+    border: 4px solid #fff;
+    background-color: #ff5722;
+    color: white;
+    box-shadow: 0px 5px 20px black;
+    font-weight: bold;
+    font-size: 22px;
+    cursor: pointer;
+
+}
+
+.spin:active{
+    width:70px;
+    height:70px;
+    font-size:20px;
+
+}
+
+.mainbox.animate:after{
+    animation: animateArrow .7s ease infinite;
+}
+
+@keyframes animateArrow{
+    50%{
+        right:-40px;
+    }
+}
+
+
+
+#NumOSec{
+    position:absolute;
+    top:0%;
+    left:0%;
+    height: 10vmin;
+    width: 30vmin;
+    text-align: center;
+    border-radius: .5rem;
+    font-size: 3vmin;
+}
+
+#SubmitSec{
+    position:absolute;
+    top:10vmin;
+    left:0%;
+    height: 7vmin;
+    width:15vmin;
+    text-align: center;
+    border-radius: .5rem;
+    font-size: 2vmin;
+}
