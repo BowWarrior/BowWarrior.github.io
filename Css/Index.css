@@ -134,14 +134,14 @@
     max-width: 1440px
 */
 
-    @media (aspect-ratio:1.7777/1){
-        body{
-            color:white;      
+@media (aspect-ratio:1.7777/1){
+	body{
+		color:white;      
         }
-    }
+}
 
-    @font-face {
-		font-family: MAGNETOB;
-		src: url('../CustomFonts/MAGNETOB.TTF');
-	}
+@font-face {
+	src: url('../CustomFonts/MAGNETOB.TTF');
+	font-family: MAGNETOB;
+}
 
