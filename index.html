@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>AJCoding Portfolio</title>
+        <link rel="stylesheet" href="Css/Index.css" type="text/css">  <!--Links CSS -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>  <!--enables Javascript -->
+        <script src="Javascript/Index.js" defer></script> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>   
+    <body onload="myRandomDiv()">
+        
+        <!--this is the top section where it has the page title-->
+        <section id="section0">
+            <div id="AJCoding">
+                <h1>AJ</h1>
+                <h1 id="Coding">Coding</h1>
+            </div>
+            <p id="intro">Over the past few years, I have made many interesting projects! I will list them below according within each section. Please click the ball in order to scroll between projects.</p>
+        </section>
+        
+        
+        <!--
+        Can put as many sections as you have projects that you would like to show off. All you have to do
+        is just copy and paste a section below and change the id to the next number.
+        -->
+        <section class="section" id="section1">
+            <iframe src="Sudoku.html" style="width:99.6vw; height:99.6vh; padding: 0px; margin: 0px;"></iframe>
+        </section>
+
+        <section class="section" id="section2">
+            <iframe src="Spinner.html" style="width:99.6vw; height:99.6vh; padding: 0px; margin: 0px;"></iframe>
+        </section>
+
+        <section class="section" id="section3">
+            <iframe src="AaronsProof.html" style="width:99.6vw; height:99.6vh; padding: 0px; margin: 0px;"></iframe>
+        </section>
+
+
+        <!--Ball that scrolls between projects-->
+        <a id="BallLink">
+            <button class="ball"><strong>CLICK ME</strong></button>
+        </a>
+    </body>
+</html>
