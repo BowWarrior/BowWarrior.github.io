@@ -6,22 +6,28 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="Javascript/AaronsProof.js" defer></script>
 </head>
-<body onload="load()">
-    <iframe src="Aarons_Proof.pdf" style="width: 49vw;height: 98vh;border: none;    "></iframe>
-    <div id="Calculator">
-        <div id="equation">
-            <input type="number" id="numerator" placeholder="Numerator Input">
-            <hr id="divisionBar">
-            <p id="Num81">81</p>
-            
-            <button id="submitBtn">Calculate</button>
+<body>
+
+     <div id="mainContainer">
+        <div id="ProofImgs">
+            <img src="Images/Aarons_Proof-1.png" alt="Proof Image 1" id="proofImg1">
+            <img src="Images/Aarons_Proof-2.png" alt="Proof Image 2" id="proofImg2">
         </div>
 
-        <div class="grid-container">
-            <p id="explaination">This box below will display the impossible number as proved by my proof on the right:</p>
-            <p id="explaination">This box below will display the actual answer to the division above:</p>
-            <div class="box impossibleNumber">Impossible Number</div>
-            <div class="box actualAnswer">Actual Number</div>
+        <div id="Calculator">
+            <div id="equation">
+                <input type="number" id="numerator" placeholder="Numerator">
+                <hr id="divisionBar">
+                <p id="Num81">81</p>
+                <button id="submitBtn">Calculate</button>
+            </div>
+
+            <div class="grid-container">
+                <p id="explaination">This box below will display the impossible number as proved by my proof on the left:</p>
+                <p id="explaination">This box below will display the actual answer to the division above:</p>
+                <div class="box impossibleNumber">Impossible Number</div>
+                <div class="box actualAnswer">Actual Number</div>
+            </div>
         </div>
     </div>
 </body>
