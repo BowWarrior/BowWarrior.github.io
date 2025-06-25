@@ -1,6 +1,21 @@
 		//*This is the Difficulty Switcher *//		
 		
-		
+
+		//could add this prompt back in if I feel like i wanted it:
+		/*
+			var sureSwitch = prompt("Are you sure you want to change difficulty to Easy? If you have started a puzzle, you will lose your progress!");
+				switch(sureSwitch) {
+					case "yes":
+						//*This part resets the background in case you won
+						document.body.style.setProperty("background-image", "none");
+						alert('Easy dub here!');
+						selectDifficultyEasy();
+						selectedDifficulty = 1;
+						break;
+					case "no":
+						break;
+				}
+				*/
 		
 		
 		
@@ -13,61 +28,35 @@
 		$(document).ready(function(){
 			document.getElementsByClassName('easy')[0].onclick = function(){
 				//this part will ask you if you want to switch to another puzzle difficulty, and depending on your answer, switch it
-				var sureSwitch = prompt("Are you sure you want to change difficulty to Easy? If you have started a puzzle, you will lose your progress!");
-				switch(sureSwitch) {
-					case "yes":
-						//*This part resets the background in case you won
-						$(document).ready(function(){
-							$('body').css("background-color", "black");
-						});
-
-						alert('Easy dub here!');
-						selectDifficultyEasy();
-						selectedDifficulty = 1;
-					case "no":
-						break;
-				}
+				document.body.style.setProperty("background-image", "none");
+				alert('Easy dub here!');
+				selectDifficultyEasy();
+				selectedDifficulty = 1;				
 			};
 			
 			
 			document.getElementsByClassName('medium')[0].onclick = function(){
 				//this part will ask you if you want to switch to another puzzle difficulty, and depending on your answer, switch it
-				var sureSwitch = prompt("Are you sure you want to change difficulty to medium? If you have started a puzzle, you will lose your progress!");
-				switch(sureSwitch) {
-					case "yes":
-						alert('Good Luck!');
-						selectDifficultyMed();
-						selectedDifficulty = 2;
-					case "no":
-						break;
-				}
+				document.body.style.setProperty("background-image", "none");
+				alert('Good Luck!');
+				selectDifficultyMed();
+				selectedDifficulty = 2;	
 			};	
 			
 			document.getElementsByClassName('hard')[0].onclick = function(){
 				//this part will ask you if you want to switch to another puzzle difficulty, and depending on your answer, switch it
-				var sureSwitch = prompt("Are you sure you want to change difficulty to hard? If you have started a puzzle, you will lose your progress!");
-				switch(sureSwitch) {
-					case "yes":
-						alert('Good Luck!');
-						selectDifficultyHard();
-						selectedDifficulty = 3;
-					case "no":
-						break;
-				}
+				document.body.style.setProperty("background-image", "none");
+				alert('This may take a while...');
+				selectDifficultyHard();
+				selectedDifficulty = 3;
 			};
 			
 			document.getElementsByClassName('impossible')[0].onclick = function(){
 				//this part will ask you if you want to switch to another puzzle difficulty, and depending on your answer, switch it
-				var sureSwitch = prompt("Are you sure you want to change difficulty to Impossible? If you have started a puzzle, you will lose your progress!");
-				switch(sureSwitch) {
-					case "yes":
-						alert('You will not win.');
-						alert('Like seriously, I couldnt solve it.');
-						selectDifficultyImpossible();
-						selectedDifficulty = 4;
-					case "no":
-						break;
-				}	
+				document.body.style.setProperty("background-image", "none");
+				alert('This one is *very* difficult.');
+				selectDifficultyImpossible();
+				selectedDifficulty = 4;					
 			};
 		});
 	
