@@ -67,8 +67,11 @@
         display: inline-block;
         position: absolute;
         color:white;
-        animation:blink 15s infinite;
-        -webkit-animation:blink 15s infinite;
+
+        background: linear-gradient(-45deg, #6376ff, #7fcad4, #834296, #6376ff, #7fcad4, #834296);
+        background-size: 300% 300%;
+        animation: gradientMove 10s linear infinite;
+
         transition: transform 2s;
         animation-timing-function: linear;
         border:none;
@@ -83,65 +86,30 @@
         animation-delay: 10s;
         */
     }
+
+    
+    @keyframes gradientMove {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 89.5% 89.5%;
+    }
+    }
+
     
     iframe{
         text-align:center;
     }
             
-    @keyframes blink {
-        0% {
-            background:black;   
+
+    @media (aspect-ratio:1.7777/1){
+        body{
+            color:white;      
         }
-        20%{
-            background:grey;          
-        }
-        40%{
-            background:#7e97e6;         
-        }
-        60%{
-            background:#273b7a;         
-        }
-        80%{
-            background:#162040;          
-        }
-        100%{
-            background:black;         
-        }            
-    }
-         
-    @-webkit-keyframes blink {
-        0% {
-            background:black;       
-        }
-        20%{
-            background:grey;        
-        }
-        40%{
-            background:#7e97e6;          
-        }
-        60%{
-            background:#273b7a;         
-        }
-        80%{
-            background:#162040;          
-        }
-        100%{
-            background:black;         
-        }         
     }
 
-/*
-    max-width: 1440px
-*/
-
-@media (aspect-ratio:1.7777/1){
-	body{
-		color:white;      
-        }
-}
-
-@font-face {
-	src: url('../CustomFonts/MAGNETOB.TTF');
-	font-family: MAGNETOB;
-}
-
+    @font-face {
+		src: url('../CustomFonts/MAGNETOB.TTF');
+		font-family: MAGNETOB;
+	}
