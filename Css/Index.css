@@ -3,7 +3,7 @@
     }
     
     body{
-        /*overflow:hidden;*/
+        overflow:hidden;
         transition: duration 5s;
         color:#003b54;
         background-image: linear-gradient(to right, pink , orange);
