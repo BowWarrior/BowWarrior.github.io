@@ -3,7 +3,7 @@
     }
     
     body{
-        overflow:hidden;
+        /*overflow:hidden;*/
         transition: duration 5s;
         color:#003b54;
         background-image: linear-gradient(to right, pink , orange);
@@ -11,40 +11,43 @@
         
     }
 
-    #intro{
-        font-size:3vmin;
-        position:relative;
-        padding-top: 25vw;
-        margin-left:15%;
-        margin-right: 15%;
+    #intro {
+        font-size: clamp(1rem, 2.5vmin, 1.8rem);
+        margin: 0 auto;
+        max-width: 80%;
+        padding: 2rem 1rem;
+        color: white;
+        border-radius: 10px;
+        position: relative;
+        top: 0vh;
+        transform: translateY(-50%);
     }
+    
     
     h1{
         margin:0px;
         padding:0px;
     }
 
-    #AJCoding{
-        top:30vh;
-        font-size:17vmin;
-        position:absolute;
-        margin:0px;
+    #AJCoding {
+        font-size: 14vmin;
+        color: brown;
+        font-family: MAGNETOB;
+        text-align: center;
         padding:0px;
-        color:Brown;
-        font-family:MAGNETOB;
-        top:0px;
-        left: 50%;
-        transform: translate(-50%, 0%);   
+        margin: 0px;
     }
+    
 
     #Coding{
-        transform: translate(-1vmin, -17vmin); 
+        transform: translate(-1.1vmin, -18vmin); 
+        
     }
         
     .section{
         position:relative;
         left:-.5vw;
-        top:500px;
+        top:0px;
         background-color: white;
         width: 99.6vw;
         height: 99.6vh;
@@ -54,6 +57,20 @@
         /*margin-top: 100%; */
         
     }
+
+    #section0 {
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start; /* ⬅️ align children to the top */
+        position: relative;
+        overflow: hidden;
+        padding-top: 2rem; /* optional spacing from top */
+    }
+    
+    
     
     .ball{
         border-radius: 50%;
