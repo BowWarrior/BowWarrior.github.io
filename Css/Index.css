@@ -7,6 +7,9 @@
         transition: duration 5s;
         color:#003b54;
         background-image: linear-gradient(to right, pink , orange);
+		background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
         text-align: center;
         
     }
@@ -130,3 +133,4 @@
 		src: url('../CustomFonts/MAGNETOB.TTF');
 		font-family: MAGNETOB;
 	}
+
