@@ -9,7 +9,7 @@
         background-image: linear-gradient(to right, pink , orange);
 		background-repeat: no-repeat;
         background-size: cover;
-        background-attachment: fixed;
+        background-attachment: fixed; /*This makes it so if you go into inspect and mess with the screen dimensions, the background will no longer have any white edges and will always take up the size of the screen */
         text-align: center;
         
     }
@@ -133,4 +133,5 @@
 		src: url('../CustomFonts/MAGNETOB.TTF');
 		font-family: MAGNETOB;
 	}
+
 
