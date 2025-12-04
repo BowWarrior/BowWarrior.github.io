@@ -79,7 +79,6 @@
         border-radius: 50%;
         height:4rem;
         width:4rem;
-        background-color:white;
         font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
         font-size: 16px;
         top:50%;
@@ -133,5 +132,6 @@
 		src: url('../CustomFonts/MAGNETOB.TTF');
 		font-family: MAGNETOB;
 	}
+
 
 
