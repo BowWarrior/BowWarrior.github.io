@@ -1,17 +1,12 @@
+let currentDeg = 0;
+
 function mySpin(){
-    var x = 1024; //min value
-    var y = 9999; //max value
-    var deg = Math.floor(Math.random() * (x - y)) + y;
-
-    document.getElementById('box').style.transform = "rotate("+deg+"deg)";
-
-    var element = document.getElementById('mainbox');
-    element.classList.remove('animate');
-    setTimeout(function(){
-        element.classList.add('animate');
-    }, 5000);
+    var x = 1024;
+    var y = 9999;
+    var deg = Math.floor(Math.random() * (y - x)) + x;
+    currentDeg += deg;
+    document.getElementById('box').style.transform = "rotate("+currentDeg+"deg)";
 }
-//This part above allows the spin button to work
 
 
 function getSection(){
