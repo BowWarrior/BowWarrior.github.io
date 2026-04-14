@@ -1,0 +1,132 @@
+    * {
+        box-sizing: border-box;
+    }
+
+    html{
+        scroll-behavior: smooth;
+        overflow: hidden;
+    }
+    
+    body{
+        overflow:hidden;
+        transition: duration 5s;
+        color:#003b54;
+        background-image: linear-gradient(to right, pink , orange);
+        text-align: center;  
+        margin: 0;      
+        padding: 0;
+    }
+
+    #scroll-container {
+        overflow: hidden;
+    }
+
+    #intro{
+        font-size: clamp(0.85rem, 2.8vmin, 1.4rem);
+        line-height: 1.6;
+        max-width: 70%;
+    }
+    #section0 {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 4vh;
+    }
+    
+    h1{
+        margin:0px;
+        padding:0px;
+    }
+
+    #AJCoding {
+        font-size: clamp(3rem, 8vw, 12rem);
+        color: brown;
+        font-family: MAGNETOB, serif;
+        line-height: 0.85;
+    }
+
+    #Coding{
+        display: block;
+        margin-top: -0.29em;
+        margin-left: -1.3vw;
+    }
+        
+    .section{
+        position:relative;
+        background-color: white;
+        width: 100%;
+        height: 100vh;
+        border: groove black;
+        padding: 0px;
+        margin: 0px;
+        
+    }
+
+    .section iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+        display: block;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .ball{
+        border-radius: 50%;
+        width: clamp(4rem, 8vmin, 6rem);
+        height: clamp(4rem, 8vmin, 6rem);
+        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: clamp(0.9rem, 1.8vmin, 1.2rem);
+        top:50%;
+        left:50%;
+        display: inline-block;
+        position: absolute;
+        color:white;
+
+        background: linear-gradient(-45deg, #6376ff, #7fcad4, #834296, #6376ff, #7fcad4, #834296);
+        background-size: 300% 300%;
+        animation: gradientMove 10s linear infinite;
+
+        transition: transform 2s;
+        animation-timing-function: linear;
+        border:none;
+        cursor: pointer;
+        /*makes it so you can't select the text inside the ball on accident for every browser*/
+        -webkit-user-select: none; /* Safari */
+        -ms-user-select: none; /* IE 10 and IE 11 */
+        user-select: none;
+
+        /*
+        animation-duration: 10s;
+        animation-delay: 10s;
+        */
+    }
+
+    
+    @keyframes gradientMove {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 89.5% 89.5%;
+    }
+    }
+
+    
+    iframe{
+        text-align:center;
+    }
+            
+
+    @media (aspect-ratio:1.7777/1){
+        body{
+            color:white;      
+        }
+    }
+
+    @font-face {
+		src: url('../CustomFonts/MAGNETOB.TTF');
+		font-family: MAGNETOB;
+	}
