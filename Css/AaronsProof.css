@@ -13,7 +13,7 @@ body {
     overflow: hidden;
 }
 
-/* ── Left: proof images ── */
+
 #ProofImgs {
     flex: 1;
     overflow-y: auto;
@@ -23,8 +23,8 @@ body {
 }
 
 #ProofImgs img {
-    width: 100%;       /* fills the left panel width */
-    height: auto;      /* natural aspect ratio, no overflow */
+    width: 100%;       
+    height: auto;      
     margin-bottom: 2rem;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.2);
@@ -37,7 +37,7 @@ body {
     transform: scale(1.02);
 }
 
-/* ── Right: calculator ── */
+/* right: calculator */
 #Calculator {
     flex: 1;
     display: flex;
@@ -50,7 +50,7 @@ body {
     overflow-y: auto;
 }
 
-/* ── Equation ── */
+/* equation  */
 #equation {
     display: flex;
     flex-direction: column;
@@ -101,7 +101,7 @@ input::placeholder {
     cursor: pointer;
 }
 
-/* ── Results grid ── */
+
 .grid-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -131,7 +131,6 @@ input::placeholder {
     font-size: clamp(0.75rem, 1.5cqw, 1rem);
 }
 
-/* ── Mobile: stack vertically ── */
 @media (max-width: 768px) {
     #mainContainer {
         flex-direction: column;

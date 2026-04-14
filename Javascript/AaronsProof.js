@@ -30,7 +30,7 @@ function getDecimal(numerator) {
 
     let resultString = truncated.toString();
 
-    // Pad with leading zeros if needed
+    //pad with leading zeros if needed
     const totalLength = Number(decimalAccuracy);
     while (resultString.length <= totalLength) {
         resultString = "0" + resultString;
