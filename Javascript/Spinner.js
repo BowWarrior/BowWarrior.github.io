@@ -1,11 +1,3 @@
-var degreeArr;
-var randColorStr;
-var sectionNumber;
-let sectionNames = [];
-
-
-
-
 function mySpin(){
     var x = 1024; //min value
     var y = 9999; //max value
@@ -18,65 +10,22 @@ function mySpin(){
     setTimeout(function(){
         element.classList.add('animate');
     }, 5000);
-
-    //adds delay to make the winning answer show after the spin stops
-    setTimeout(function(){
-        //need this to normalize for negative values:
-        let normalizedDeg = ((90 - deg) % 360 + 360) % 360;
-        let nameAt90 = getSectionNameAtDegree(degreeArr, normalizedDeg);
-        alert("Color at 90°: "+ nameAt90 + " Wins!");
-    }, 5500);
 }
 //This part above allows the spin button to work
 
 
 function getSection(){
-    //reset the section names array when you change number of sections
-    sectionNames = [];
-    sectionNumber = document.getElementById('NumOSec').value;
+    var sectionNumber = document.getElementById('NumOSec').value;
     var circle = document.getElementById('box');
-
-    //gets user input for section names of game board spinner
-    for (let i = 0; i < sectionNumber; i++) {
-        let name = prompt(`Enter a name for section ${i + 1}`);
-        if (!name) {
-            name = `Section ${i + 1}`;
-        }
-        sectionNames.push({name});
-        sectionNames.push({name});
-    }
-
-
-    //writes text in section corresponding to user input
-    let labelContainer = document.getElementById("labels-container");
-    labelContainer.innerHTML = ""; 
-
-    for (let i = 0; i < sectionNumber; i++) {
-        let label = document.createElement("div");
-        label.className = "label";
-        label.innerText = sectionNames[i*2]; // because I pushed each name twice
-
-        let angle = (360 / sectionNumber) * i + (360 / sectionNumber) / 2;
-
-        // Rotate label to align with section, then push out, and counter-rotate for upright text
-        label.style.transform = `rotate(${angle}deg) translateX(45vmin) rotate(${-angle}deg)`;
-        
-        let h = sectionNames[i*2].name.toString();
-        console.log(h);
-        console.log(typeof(h));
-        labelContainer.appendChild(h);
-        //labelContainer.appendChild(sectionNames[i].name.toString()); // push the name to the label container
-    }
-
-
+    
     while(sectionNumber > 0){            
-        if(sectionNumber == 1){
+        if(sectionNumber === 1){
             alert('Having a spinner with one thing in it is like Putins election')
         }
 
 
         
-        randColorStr = [];
+        let randColorStr = [];
         for (var i = 0; i < sectionNumber * 2; i++) {
                 let random_hex_color_code = () => {
                     let randomColor = (Math.random() * 0xfffff * 1000000).toString(16);
@@ -106,7 +55,7 @@ function getSection(){
 
 
         if(sectionNumber >= 2){
-            degreeArr = [];
+            let degreeArr = [];
 
             for (var i = 0; i < sectionNumber; i++) {
                 let degrees = i * (360/sectionNumber);
@@ -127,8 +76,8 @@ function getSection(){
                         let FinalStyle = manyDegrees.concat(lastDeg);
                         //alert(FinalStyle);
                         
-                        circle.style.background = 'conic-gradient(' + FinalStyle + ')';
-                        //alert(circle.style.background);
+                        let y = circle.style.background = 'conic-gradient(' + FinalStyle + ')';
+                        //alert(y);
                     }            
                 }
 
@@ -140,43 +89,4 @@ function getSection(){
             break;
         }			
     }    
-}
-
-
-
-
-
-function getSectionNameAtDegree(degreeArr, targetDeg) {
-    //normalize target degree in case of negative values
-    targetDeg = (targetDeg % 360 + 360) % 360;
-
-    for (let i = 0; i < degreeArr.length - 1; i++) {
-        let start = degreeArr[i];
-        let end = degreeArr[(i + 1) % degreeArr.length];
-
-        if ((start < end && targetDeg >= start && targetDeg < end) ||
-            (start > end && (targetDeg >= start || targetDeg < end))) {
-            return sectionNames[i].name; // returns {name}
-        }
-    }
-
-    // Final slice: from last degree to 360
-    let lastIndex = degreeArr.length - 1;
-    if (targetDeg >= degreeArr[lastIndex] && targetDeg < 360) {
-        return sectionNames[lastIndex].name;
-    }
-
-    //returns null if not found
-    return null;
-}
-
-
-
-
-
-
-
-
-function mapColorsToUserInput(){
-    
 }
