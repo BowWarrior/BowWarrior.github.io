@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Aaron's Proof</title>
     <link rel="stylesheet" type="text/css" href="Css/AaronsProof.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -8,28 +10,32 @@
 </head>
 <body>
 
-     <div id="mainContainer">
-            <div id="ProofImgs">
-                <img src="Images/Aarons_Proof_Page1.jpg" alt="Proof Image 1" loading="lazy" id="proofImg1">
-                <img src="Images/Aarons_Proof_Page2.jpg" alt="Proof Image 2" loading="lazy" id="proofImg2">
-                <img src="Images/Aarons_Proof_Page3.jpg" alt="Proof Image 3" loading="lazy" id="proofImg3">
-            </div>
+    <main id="mainContainer">
+        <section id="ProofImgs" aria-label="Proof pages">
+            <img src="Images/Aarons_Proof_Page1.jpg" alt="Proof page 1" loading="lazy" id="proofImg1">
+            <img src="Images/Aarons_Proof_Page2.jpg" alt="Proof page 2" loading="lazy" id="proofImg2">
+            <img src="Images/Aarons_Proof_Page3.jpg" alt="Proof page 3" loading="lazy" id="proofImg3">
+        </section>
 
-        <div id="Calculator">
+        <section id="Calculator" aria-label="Calculator">
             <div id="equation">
-                <input type="number" id="numerator" placeholder="Numerator">
+                <input type="number" id="numerator" placeholder="Numerator" inputmode="numeric" aria-label="Numerator">
                 <hr id="divisionBar">
                 <p id="Num81">81</p>
                 <button id="submitBtn">Calculate</button>
             </div>
 
             <div class="grid-container">
-                <p id="explaination">This box below will display the impossible number as proved by my proof on the left:</p>
-                <p id="explaination">This box below will display the actual answer to the division above:</p>
-                <div class="box impossibleNumber">Impossible Number</div>
-                <div class="box actualAnswer">Actual Number</div>
+                <div class="result">
+                    <p class="explaination">This box below will display the impossible number as proved by my proof:</p>
+                    <div class="box impossibleNumber">Impossible Number</div>
+                </div>
+                <div class="result">
+                    <p class="explaination">This box below will display the actual answer to the division above:</p>
+                    <div class="box actualAnswer">Actual Number</div>
+                </div>
             </div>
-        </div>
-    </div>
+        </section>
+    </main>
 </body>
 </html>
